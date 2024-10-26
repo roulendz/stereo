@@ -105,14 +105,14 @@ function Illustration(model, modelParam, plot) {
     };
 } // end illustration object
 
-// setup the tab handler.
-window.onload = function() {
-    // see if using tabs
-    var useTabs = document.getElementById("useTabs");
-    if (useTabs.value == "true") {
-        pageSetup();
-    }
-};
+// // setup the tab handler.
+// window.onload = function() {
+//     // see if using tabs
+//     var useTabs = document.getElementById("useTabs");
+//     if (useTabs.value == "true") {
+//         pageSetup();
+//     }
+// };
 
 var CHANGE_UPDATE = 1000;
 

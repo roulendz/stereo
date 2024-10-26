@@ -1,5 +1,13 @@
+const SQUARE_DYNAMIC = 1;
+const ALL_DYNAMIC = 2;
+const BACK_DYNAMIC = 3;
 // Structure from motion demonstration
 function RandomDotStereograms(idArea, idExpl) {
+
+    this.SQUARE_DYNAMIC = 1;
+    this.ALL_DYNAMIC = 2;
+    this.BACK_DYNAMIC = 3;
+    
     this.canvas = document.getElementById(idArea); // drawing canvas
     //	this.graph.doListen = false;						// if graph called from this object, listen from here
     this.explainP = document.getElementById(idExpl); // results explanation paragraph
