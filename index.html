@@ -1,57 +1,78 @@
 <!DOCTYPE html>
 <html>
-	
 <!-- Mirrored from isle.hanover.edu/Ch07DepthSize/Ch07RandomDotStereograms.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 26 Oct 2024 00:49:08 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
-		<title>Random Dot Stereograms</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width">
-		<script src="js/res/defaults.js"></script>
-		<script src="js/res/draw/color.js"></script>
-		<script src="js/res/ui/tabs1.js"></script>
-		<script src="js/res/txt/font.js"></script>
-		<script src="js/res/ui/button.js"></script>
-		<script src="js/res/io/slider.js"></script>
-		<script src="js/res/io/io.js"></script>
-		<script src="js/res/ui/resizeCanvas.js"></script>
-		<script src="js/res/draw/draw.js"></script>
-		<script src="js/res/stim/randomDotField.js"></script>
-		<script src="js/res/image/imageConst.js"></script>
-		<script src="js/res/image/imageData.js"></script>
-		<script src="js/res/vision/depth/rdsConst.js"></script>
-		<script src="js/depth/rdsCh07Control.js"></script>
-		<script src="js/res/vision/depth/rds.js"></script>
-		<script src="js/res/method/illustration.js"></script>
+    <title>Random Dot Stereograms</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="js/res/defaults.js"></script>
+    <script src="js/res/draw/color.js"></script>
+    <script src="js/res/ui/tabs1.js"></script>
+    <script src="js/res/txt/font.js"></script>
+    <script src="js/res/ui/button.js"></script>
+    <script src="js/res/io/slider.js"></script>
+    <script src="js/res/io/io.js"></script>
+    <script src="js/res/ui/resizeCanvas.js"></script>
+    <script src="js/res/draw/draw.js"></script>
+    <script src="js/res/stim/randomDotField.js"></script>
+    <script src="js/res/image/imageConst.js"></script>
+    <script src="js/res/image/imageData.js"></script>
+    <script src="js/res/vision/depth/rdsConst.js"></script>
+    <script src="js/depth/rdsCh07Control.js"></script>
+    <script src="js/res/vision/depth/rds.js"></script>
+    <script src="js/res/method/illustration.js"></script>
 
-		<link href="css/RichWebSP.css" rel="stylesheet">
-	
-		
-
-	</head>
+    <link href="css/RichWebSP.css" rel="stylesheet">
+    
+     <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 20px;
+        }
+        .controls-container {
+            grid-column: 1;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .canvas-container {
+            grid-column: 2;
+        }
+        #plotCanvas {
+            width: 80%;
+            height: auto;
+        }
+    </style>
+</head>
 <body>
 
 <div class="tabpage" id="tabpage_3">
-	<canvas id="plotCanvas" class="allowControls">   </canvas>
-	<span class="controls">
-	<p class="UI_top">
-		<form>
-			<input type="button" id="reset" value="Reset" alt="Reset">
-		</form>
-		<span id="modelControl"> </span>
-	</p>
-	<span id="plotVal"> </span>
-	<p id="plotExp"> </p>
-		<script>
-			var illustration = new Figure(new RDS_Ch07Control("modelControl"),
-										new RandomDotStereograms("plotCanvas","plotExp")); // send method stimulus, and container to respond to
-			illustration.setupListener("reset");
-			illustration.init();
-		</script>
-		<p class = "afterIllustration"> </p>
-	</span>
+    <div class="grid-container">
+        <div class="controls-container">
+            <span class="controls">
+                <p class="UI_top">
+                    <form>
+                        <input type="button" id="reset" value="Reset" alt="Reset">
+                    </form>
+                    <span id="modelControl"> </span>
+                </p>
+                <span id="plotVal"> </span>
+                <p id="plotExp"> </p>
+                <p class="afterIllustration"> </p>
+            </span>
+        </div>
+        <div class="canvas-container">
+            <canvas id="plotCanvas" class="allowControls"></canvas>
+        </div>
+    </div>
+    <script>
+        var illustration = new Figure(new RDS_Ch07Control("modelControl"),
+                                    new RandomDotStereograms("plotCanvas","plotExp")); // send method stimulus, and container to respond to
+        illustration.setupListener("reset");
+        illustration.init();
+    </script>
 </div>
 
 </body>
-
 </html>
